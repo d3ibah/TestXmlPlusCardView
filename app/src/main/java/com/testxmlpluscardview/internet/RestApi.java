@@ -12,6 +12,8 @@ import retrofit2.http.GET;
  */
 
 public interface RestApi {
-    @GET("v1/search-items")
-    Observable<List<GoodsCard>> getGoodsItems;
+
+    @GET("search-items")
+    Observable<List<GoodsCard>> getGoodsItems();
+
 }

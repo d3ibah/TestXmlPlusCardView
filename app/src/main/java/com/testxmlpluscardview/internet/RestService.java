@@ -16,7 +16,7 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 public class RestService {
 
-    public static final String BASE_URL = "https://api.jeench.com/";
+    public static final String BASE_URL = "https://api.jeench.com/v1/";
     private static RestService instanse;
     private RestApi restApi;
 
