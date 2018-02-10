@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestXmlPlusCardView</string>
+
+    <string name="is_open">Open now</string>
 </resources>

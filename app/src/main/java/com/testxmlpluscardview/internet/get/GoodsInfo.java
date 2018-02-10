@@ -4,7 +4,7 @@ package com.testxmlpluscardview.internet.get;
  * Created by Home911 on 09.02.2018.
  */
 
-public class GoodsCard
+public class GoodsInfo
 {
     private Response response;
 
