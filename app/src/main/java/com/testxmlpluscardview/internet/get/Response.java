@@ -1,38 +1,34 @@
 package com.testxmlpluscardview.internet.get;
 
+
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 /**
  * Created by Home911 on 09.02.2018.
  */
 
 public class Response
 {
-    private Message message;
+    @SerializedName("message")
+    private List<Message> responseMessagesList;
 
     private String code;
 
-    public Message getMessage ()
-    {
-        return message;
+    public List<Message> getResponseMessagesList() {
+        return responseMessagesList;
     }
 
-    public void setMessage (Message message)
-    {
-        this.message = message;
+    public void setResponseMessagesList(List<Message> responseMessagesList) {
+        this.responseMessagesList = responseMessagesList;
     }
 
-    public String getCode ()
-    {
+    public String getCode() {
         return code;
     }
 
-    public void setCode (String code)
-    {
+    public void setCode(String code) {
         this.code = code;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [message = "+message+", code = "+code+"]";
     }
 }

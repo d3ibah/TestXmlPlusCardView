@@ -1,8 +1,7 @@
 package com.testxmlpluscardview.internet;
 
-import com.testxmlpluscardview.internet.get.GoodsInfo;
 
-import java.util.List;
+import com.testxmlpluscardview.internet.get.Response;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -14,6 +13,6 @@ import retrofit2.http.GET;
 public interface RestApi {
 
     @GET("search-items")
-    Observable<List<GoodsInfo>> getGoodsItems();
+    Observable<Response> getResponse();
 
 }
