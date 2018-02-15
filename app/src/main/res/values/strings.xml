@@ -2,4 +2,6 @@
     <string name="app_name">TestXmlPlusCardView</string>
 
     <string name="is_open">Open now</string>
+    <string name="currency_of_payment">$%s</string>
+    <string name="distance_unit">%s km</string>
 </resources>

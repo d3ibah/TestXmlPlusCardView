@@ -45,6 +45,16 @@ public class ResponseAdapter extends RecyclerView.Adapter<ResponseAdapter.Respon
     public void onBindViewHolder(final ResponseViewHolder holder, int position) {
         Log.e("5", "onBindViewHolder");
         Message message = messageList.get(position);
+
+        String distance = Integer.toString(message.getPointDistance() / 1000000);
+        Log.e("EEE", distance);
+
+        holder.textViewItemName.setText(message.getItemName());
+        holder.textViewItemPrice.setText(String.format
+                (holder.itemView.getContext().getResources().getString(R.string.currency_of_payment),
+                        Float.toString(message.getItemPrice())));
+        holder.textViewShopName.setText(message.getShopName());
+        holder.textViewPointDistance.setText(String.format(holder.itemView.getContext().getResources().getString(R.string.distance_unit), distance));
         holder.textViewIsOpen.setText(R.string.is_open);
         int rank = (int)message.getShopRank();
         holder.progressBarShopRank.setMax(1000);
@@ -53,6 +63,7 @@ public class ResponseAdapter extends RecyclerView.Adapter<ResponseAdapter.Respon
         MultiTransformation multiTransformation = new MultiTransformation(
                 new CropTransformation(140, 140, CropTransformation.CropType.CENTER),
                 new RoundedCornersTransformation(5, 0));
+
         Glide.with(holder.itemView.getContext())
                 .load(message.getItemImage())
                 .apply(RequestOptions.bitmapTransform(multiTransformation))
@@ -72,6 +83,10 @@ public class ResponseAdapter extends RecyclerView.Adapter<ResponseAdapter.Respon
 
     public class ResponseViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageViewItemImage;
+        private TextView textViewItemName;
+        private TextView textViewShopName;
+        private TextView textViewItemPrice;
+        private TextView textViewPointDistance;
         private TextView textViewIsOpen;
         private ProgressBar progressBarShopRank;
         private ImageView imageViewShopLogo;
@@ -82,6 +97,10 @@ public class ResponseAdapter extends RecyclerView.Adapter<ResponseAdapter.Respon
             imageViewItemImage = itemView.findViewById(R.id.imageViewItemImage);
             imageViewShopLogo = itemView.findViewById(R.id.imageViewShopLogo);
             progressBarShopRank = itemView.findViewById(R.id.progressBarShopRank);
+            textViewItemName = itemView.findViewById(R.id.textViewItemName);
+            textViewShopName = itemView.findViewById(R.id.textViewShopName);
+            textViewItemPrice = itemView.findViewById(R.id.textViewItemPrice);
+            textViewPointDistance = itemView.findViewById(R.id.textViewPointDistance);
             textViewIsOpen = itemView.findViewById(R.id.textViewIsOpen);
         }
 
