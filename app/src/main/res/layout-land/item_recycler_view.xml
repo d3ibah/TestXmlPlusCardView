@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="9dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageViewItemImage"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="18dp"
+
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="item name"
+            app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="price"
+            app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textViewItemName" />
+
+        <ImageView
+            android:id="@+id/imageViewShopLogo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/progressBarShopRank"
+            android:layout_alignStart="@+id/progressBarShopRank"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBarShopRank"
+            app:layout_constraintEnd_toEndOf="@+id/progressBarShopRank"
+            app:layout_constraintStart_toStartOf="@+id/progressBarShopRank"
+            app:layout_constraintTop_toTopOf="@+id/progressBarShopRank" />
+
+        <ProgressBar
+            android:id="@+id/progressBarShopRank"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="18dp"
+            android:indeterminate="false"
+            android:max="1000"
+            android:progressDrawable="@drawable/circular"
+            android:secondaryProgress="1000"
+            android:theme="@style/CircularProgress"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/relativeLayout" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewItemImage"
+            app:layout_constraintTop_toBottomOf="@+id/textViewItemPrice">
+
+
+            <TextView
+                android:id="@+id/textViewShopName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="test"
+                android:layout_alignParentStart="true"
+                tools:layout_editor_absoluteX="166dp"
+                tools:layout_editor_absoluteY="91dp" />
+
+            <TextView
+                android:id="@+id/textViewPointDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/textViewShopName"
+                android:hint="Dist"
+                tools:layout_editor_absoluteX="166dp"
+                tools:layout_editor_absoluteY="128dp" />
+
+            <TextView
+                android:id="@+id/textViewIsOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignBaseline="@+id/textViewPointDistance"
+                android:layout_toRightOf="@+id/textViewPointDistance"
+                android:layout_marginLeft="8dp"
+
+                android:text="@string/is_open"
+                android:textColor="@color/colorIsOpen"
+                tools:layout_editor_absoluteX="221dp"
+                tools:layout_editor_absoluteY="128dp" />
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
